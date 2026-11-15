@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L5P Series</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#0b0b0b;color:#fff}
+.header{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;background:rgba(15,15,15,.75);backdrop-filter:blur(14px);border-bottom:1px solid #2a2a2a;z-index:100}
+.back{background:none;border:none;color:#fff;font-size:16px; font-weight: 700; cursor:pointer}
+.hero{max-width:1200px;margin:40px auto;padding:0 20px}
+.hero img{width:100%;border-radius:20px;display:block}
+.info{
+    text-align:center;
+}
+
+.info h1{
+    margin:0;
+    font-size:48px;
+    font-weight:700;
+}
+
+.info h1::after{
+    content:"";
+    display:block;
+    width:300px;          /* hoặc 200px */
+    height:2px;
+    background:#3a3a3a;
+    margin:20px auto 0;   /* auto sẽ căn giữa */
+}
+.masonry{
+
+    max-width:1200px;
+    margin:20px auto;
+    padding:0 20px;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+
+}
+
+.card{
+
+    position:relative;
+    border-radius:16px;
+    overflow:hidden;
+
+}
+
+@media(max-width:640px){
+
+    .masonry{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+.card{break-inside:avoid;margin-bottom:20px;position:relative;border-radius:16px;overflow:hidden}
+.card img{width:100%;display:block}
+.hover{position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;opacity:0;transition:.25s}
+.card:hover .hover{opacity:1}
+.lightbox{
+
+    position: fixed;
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,.94);
+
+    padding: 40px;
+
+    z-index: 9999;
+
+    cursor: default;
+
+}
+
+.lightbox img{
+
+    max-width: 95vw;
+    max-height: 95vh;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+}
+
+/* ===========================
+   LIGHTBOX CLOSE BUTTON
+=========================== */
+
+.lightbox-close{
+
+    position: fixed;
+
+    top: 24px;
+    left: 24px;      /* Đổi từ right sang left */
+
+    border: none;
+    background: none;
+
+    color: #fff;
+
+    font-size: 32px; /* Nhỏ lại */
+
+    font-weight: 700; /* Bold */
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    padding: 0;
+
+    z-index: 10000;
+
+}
+
+.lightbox-close:hover{
+
+    opacity: .7;
+
+}
+
+.video-section{
+
+    max-width:1200px;
+    margin:30px auto;
+    padding:0 20px;
+
+}
+
+
+.video-wrapper{
+
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+}
+
+.video-wrapper iframe{
+
+    width:100%;
+    height:100%;
+
+    border:none;
+}
+
+.hero-card{
+    grid-column: 1 / -1;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    margin-top:5px;
+}
+
+.hero-card img{
+    width:100%;
+    display:block;
+}
+</style>
+</head>
+<body class="font-sans bg-[#111] text-white">
+<header class="header">
+<button class="back" onclick="backToAnker()">← Back</button>
+<div>Liberty 5 Pro Series</div>
+</header>
+<section class="hero">
+<img src="./Image/One-Anker-Hero.webp" alt="">
+</section>
+<section class="info">
+<h1>Liberty 5 Pro Series Launching Campaign</h1>
+</section>
+
+<section class="masonry">
+
+
+<!-- KEY VISUAL -->
+    <div class="card hero-card" onclick="openImg('./Image/KV Retailer.webp')">
+
+        <img src="./Image/KV Retailer.webp" alt="Key Visual">
+
+        <div class="hover">
+            View Fullscreen
+        </div>
+
+ </div>
+
+     <div class="card hero-card" onclick="openImg('./Image/Door Sticker 1m.webp')">
+
+        <img src="./Image/Door Sticker 1m.webp" alt="Key Visual">
+
+        <div class="hover">
+            View Fullscreen
+        </div>
+
+ </div>
+
+<div class="card" onclick="openImg('./Image/CPAS.webp')">
+
+    <img src="./Image/CPAS.webp">
+
+    <div class="hover">
+        View Fullscreen
+    </div>
+</div>
+
+<div class="card" onclick="openImg('./Image/CEO Choice.webp')">
+
+    <img src="./Image/CEO Choice.webp">
+
+    <div class="hover">
+        View Fullscreen
+    </div>
+</div>
+
+<div class="card" onclick="openImg('./Image/CEO Hero Face.webp')">
+
+    <img src="./Image/CEO Hero Face.webp">
+
+    <div class="hover">
+        View Fullscreen
+    </div>
+</div>
+
+<div class="card" onclick="openImg('./Image/Pencil-Group.webp')">
+
+    <img src="./Image/Pencil-Group.webp">
+
+    <div class="hover">
+        View Fullscreen
+    </div>
+</div>
+
+<div class="card" onclick="openImg('./Image/Ads-4.webp')">
+
+    <img src="./Image/Ads-4.webp">
+
+    <div class="hover">
+        View Fullscreen
+    </div>
+</div>
+
+<div class="card" onclick="openImg('./Image/Ads-5.webp')">
+
+    <img src="./Image/Ads-5.webp">
+
+    <div class="hover">
+        View Fullscreen
+    </div>
+</div>
+
+<div class="card" onclick="openImg('./Image/Social-1.webp')">
+
+    <img src="./Image/Social-1.webp">
+
+    <div class="hover">
+        View Fullscreen
+    </div>
+</div>
+
+<div class="card" onclick="openImg('./Image/Social-2.webp')">
+
+    <img src="./Image/Social-2.webp">
+
+    <div class="hover">
+        View Fullscreen
+    </div>
+</div>
+
+<div class="card" onclick="openImg('./Image/Social-3.webp')">
+
+    <img src="./Image/Social-3.webp">
+
+    <div class="hover">
+        View Fullscreen
+    </div>
+</div>
+
+<div class="card" onclick="openImg('./Image/Social-4.webp')">
+
+    <img src="./Image/Social-4.webp">
+
+    <div class="hover">
+        View Fullscreen
+    </div>
+</div>
+
+<div class="card" onclick="openImg('./Image/Social-5.webp')">
+
+    <img src="./Image/Social-5.webp">
+
+    <div class="hover">
+        View Fullscreen
+    </div>
+</div>
+
+<div class="card" onclick="openImg('./Image/Social-6.webp')">
+
+    <img src="./Image/Social-6.webp">
+
+    <div class="hover">
+        View Fullscreen
+    </div>
+</div>
+
+    <div class="card hero-card" onclick="openImg('./Image/OOH-Nguyen Hue.webp')">
+
+        <img src="./Image/OOH-Nguyen Hue.webp" alt="Key Visual">
+
+        <div class="hover">
+            View Fullscreen
+        </div>
+
+ </div>
+
+</section>
+
+
+<!-- YouTube 1 -->
+<section class="video-section">
+
+    <div class="video-wrapper">
+
+        <iframe
+            src="https://www.youtube.com/embed/fWs-a9iwq9k?si=k744ziSA5hn3injP"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</section>
+
+<section class="masonry">
+
+   <div class="card hero-card" onclick="openImg('./Image/OOH-Le Duan.webp')">
+
+        <img src="./Image/OOH-Le Duan.webp" alt="Key Visual">
+
+        <div class="hover">
+            View Fullscreen
+        </div>
+
+ </div>
+
+</section>
+
+<!-- YouTube 2 -->
+<section class="video-section">
+
+    <div class="video-wrapper">
+
+        <iframe
+            src="https://www.youtube.com/embed/vdB3CuAVg40?si=TMPm3uif0hwil7_W"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</section>
+
+</section>
+<div class="lightbox" id="lb">
+
+    <button class="lightbox-close" onclick="closeImg(event)">
+        ✕
+    </button>
+
+    <img id="lbimg">
+
+</div>
+<script>
+const lightbox = document.getElementById("lb");
+const lightboxImage = document.getElementById("lbimg");
+
+function openImg(src){
+
+    lightboxImage.src = src;
+
+    lightbox.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+
+}
+
+function closeImg(event){
+
+    if(event){
+        event.stopPropagation();
+    }
+
+    lightbox.style.display = "none";
+
+    document.body.style.overflow = "";
+
+}
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Escape" && lightbox.style.display==="flex"){
+
+        closeImg();
+
+    }
+
+});
+
+function backToAnker() {
+    history.back();
+}
+
+</script>
+
+
+</body>
+
+
+</html>
