@@ -556,6 +556,46 @@
   </div>
 </div>
 
+<!-- CARD IMAGE 5 -->
+<div 
+  class="card relative group project-card" 
+  data-aos="fade-up"
+  data-aos-offset="80"
+  data-aos-delay="300"
+  data-aos-duration="800"
+  data-aos-easing="ease-in-out"
+  data-aos-once="true"
+  data-category="SoMe"
+>
+
+  <!-- Spinner Overlay -->
+  <div class="absolute inset-0 flex items-center justify-center bg-black z-10" id="spinner-bca">
+    <div class="w-14 h-14 rounded-full border-t-4 border-white border-opacity-30 animate-spin flex items-center justify-center bg-black">
+      <img src="./Image/favicon2.webp" class="w-6 h-6 object-contain" />
+    </div>
+  </div>
+
+  <!-- Project Image -->
+  <img 
+    src="./Image/BCA-Thumb.webp"
+    alt="Campaign Project 5"
+    class="w-full h-auto rounded-xl opacity-0 transition-opacity duration-300"
+    onload="handleImageLoaded(this, 'spinner-bca')"
+    onclick="openGalleryModal('cardbca-gallery')"
+    data-spinner="spinner-bca"
+  />
+
+  <!-- Hover Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none rounded-xl px-4">
+    <p class="text-white text-center mb-2 text-base sm:text-lg lg:text-xl transform transition-transform duration-300 group-hover:scale-110">
+      Social Post
+    </p>
+    <div class="bg-white/50 rounded-full px-2 sm:px-3 py-0.5">
+      <span class="text-xs sm:text-sm lg:text-base">Better Choice Awards 2026</span>
+    </div>
+  </div>
+
+</div>
 
 <!-- CARD IMAGE 4 -->
 <div 
@@ -938,6 +978,71 @@ class="
     <!-- ITEM 4 -->
     <img
       src="./Image/Cer-4.webp"
+      class="w-full md:w-auto md:h-full object-contain rounded-xl" />
+
+  </div>
+</div>
+
+<!-- CARD 5 GALLERY -->
+<div id="cardbca-gallery" class="gallery-modal">
+
+  <!-- CLOSE BUTTON (STICKY HEADER) -->
+  <button
+    onclick="closeGalleryModal('cardbca-gallery')"
+    class="
+      sticky top-0 left-0
+      w-full h-14
+      flex items-center pl-4
+      bg-black
+      text-white text-3xl font-bold
+      hover:text-gray-400 transition
+      z-[50]
+
+      md:absolute md:top-4 md:left-4
+      md:w-auto md:h-auto
+      md:bg-transparent md:text-4xl
+    "
+  >
+    &times;
+  </button>
+
+  <!-- CONTENT -->
+  <div
+class="
+  scroll-x
+  w-full h-full
+  flex flex-col md:flex-row
+  gap-6
+  px-6 md:px-12 lg:px-24
+  pt-5 pb-10 md:py-20
+
+  overflow-y-auto
+  md:overflow-x-auto md:overflow-y-hidden
+
+  cursor-grab
+
+  md:items-center        /* chỉ center trục dọc */
+"
+  >
+
+    <!-- ITEM 1 -->
+    <img
+      src="./Image/BCA-1.webp"
+      class="w-full md:w-auto md:h-full object-contain rounded-xl" />
+
+    <!-- ITEM 2 -->
+    <img
+      src="./Image/BCA-2.webp"
+      class="w-full md:w-auto md:h-full object-contain rounded-xl" />
+
+    <!-- ITEM 3 -->
+    <img
+      src="./Image/BCA-3.webp"
+      class="w-full md:w-auto md:h-full object-contain rounded-xl" />
+
+    <!-- ITEM 4 -->
+    <img
+      src="./Image/BCA-4.webp"
       class="w-full md:w-auto md:h-full object-contain rounded-xl" />
 
   </div>
